@@ -3,24 +3,25 @@
 <head>
   <meta charset="utf-8">
   <title>GifClubVR</title>
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/aframe-v0.6.1.min.js"></script>
+  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
 </head>
 <body>
-	<a-scene>
-		<a-entity laser-controls="hand: right"></a-entity>
-		<a-entity hand-controls controller-cursor raycaster="far: 2"></a-entity>
-	    <a-entity
-	    	geometry="primitive:box;"
-	    	material="shader:gif;src:url(https://media.giphy.com/media/RXAfuEDpseYBG/giphy.gif);opacity:1"
-	    	position="0 2 -2">
-	    </a-entity>
-	    <a-entity
-	    	geometry="primitive:box;"
-	    	material="shader:gif;src:url(https://media.giphy.com/media/Wj0c0rzczOJNe/giphy.gif);opacity:1"
-	    	position="-1 1 -3">
-	    </a-entity>
+	<a-scene physics>
+		<a-entity position="0 0 -4">
+		    <!-- <a-entity
+		    	geometry="primitive:box;"
+		    	material="shader:gif;src:url(https://media.giphy.com/media/RXAfuEDpseYBG/giphy.gif);opacity:1"
+		    	position="0 0 0">
+		    </a-entity> -->
+		    <a-box position="0 2 -4" color="#222222" dynamic-body></a-box>
+		    <a-box position="0 4 -4" color="#222222" dynamic-body></a-box>
+		    <a-box position="0 8 -4" color="#222222" dynamic-body></a-box>
+		    <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" static-body></a-plane>
+      		<a-sky color="#ECECEC"></a-sky>
+		</a-entity>
   	</a-scene>
-  	<script src="js/jquery-1.11.1.min.js"></script>
-  	<script src="js/aframe-v0.6.1.min.js"></script>
-  	<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
 </body>
 </html>
